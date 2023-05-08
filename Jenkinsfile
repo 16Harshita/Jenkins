@@ -7,12 +7,11 @@ pipeline {
     stage('Test') { 
       steps { 
         withSonarQubeEnv('SonarQube') { 
-          sh "${SCANNER_HOME}/bin/sonar-scanner 
+          sh "${SCANNER_HOME}/bin/sonar-scanner \
           -D sonar.projectKey=Pipeline \ 
           -D sonar.projectName=Unreal-Engine-Project"
          } 
       } 
     } 
   } 
-
 }
